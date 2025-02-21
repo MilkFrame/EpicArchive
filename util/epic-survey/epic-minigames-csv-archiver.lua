@@ -32,12 +32,12 @@ local recordsDone = 0
 local filesDone = 0
 local writtenUsers = {}
 
-print("Username,ID,SurveyDate,Level,Wins,Title,Effect,Pet,Death,GearEquipped,VIP") --Produce 19 CSVs for high level players
+print("Username,ID,SurveyDate,Level,Wins,Title,Effect,Pet,Death,GearEquipped,VIP") --Produce 29 CSVs for high level players
 for i,v in pairs(masterArray) do
 	writtenUsers[v[1]] = true
 	vip = "n" if v[2].Gamepasses.vip == true then vip = "y" end
 	line = v[2].Username..","..tonumber(v[1])..","..v[2].Date:sub(1,10)..","..v[2].Level..","..v[2].Wins..","..vip..","..c(v[2].titleselected)..","..c(v[2].effectselected)..","..c(v[2].petselected)..","..c(v[2].deathselected)..","..fetchTrue(v[2].gearsequipped)
-	if size + string.len(line) < 384000 then
+	if size + string.len(line) < 350000 then
 		print(line)
 		size = size + string.len(line)
 		recordsDone = recordsDone + 1
@@ -46,7 +46,7 @@ for i,v in pairs(masterArray) do
 		filesDone = filesDone + 1
 		recordsDone = 0
 		size = 65
-		if filesDone >= 19 then
+		if filesDone >= 29 then
 			break
 		end
 		wait(0.5)
@@ -60,7 +60,7 @@ for i,v in pairs(masterArray) do
 	if writtenUsers[v[1]] == nil then
 		vip = "n" if v[2].Gamepasses.vip == true then vip = "y" end
 		line = v[2].Username..","..tonumber(v[1])..","..v[2].Date:sub(1,10)..","..v[2].Level..","..v[2].Wins..","..vip..","..c(v[2].titleselected)..","..c(v[2].effectselected)..","..c(v[2].petselected)..","..c(v[2].deathselected)..","..fetchTrue(v[2].gearsequipped)
-		if size + string.len(line) < 384000 then
+		if size + string.len(line) < 350000 then
 			print(line)
 			size = size + string.len(line)
 			recordsDone = recordsDone + 1
