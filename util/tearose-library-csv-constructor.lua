@@ -19,10 +19,14 @@ for i,v in pairs(workspace.Books2:GetChildren()) do
 	end
 end
 table.sort(books, function(a, b)
-	if a.Name == b.Name then
+	if a.Name == b.Name and a:FindFirstChild("Author") and b:FindFirstChild("Author") then
 		return a.Author.Value < b.Author.Value
 	else
-		return a.Name < b.Name
+		local a1,a2 = string.find(a.Name,"%w"),""
+		if a1 ~= nil then a2 = a.Name:sub(a1) else a2 = a.Name end
+		local b1,b2 = string.find(b.Name,"%w"),""
+		if b1 ~= nil then b2 = b.Name:sub(b1) else b2 = b.Name end
+		return a2:lower() < b2:lower()
 	end
 end)
 print(#books) print()
@@ -50,7 +54,7 @@ for i,v in pairs(books) do
 	local line = "/////"..quote(v.Name)..","..quote(author)..","..#pages..","..charCount
 	if doneBooks[line] == nil then
 		doneBooks[line] = true
-		if len + string.len(line) < 380000 then
+		if len + string.len(line) < 250000 then
 			print(line)
 			len = len + string.len(line)
 		else
