@@ -12,7 +12,7 @@ end)
 
 local function generateCSV(data, maxChars)
 	-- Print the header
-	local header = "Title,Author Line,Id,PublishDate,AuthorIds,PageCount,Genres"
+	local header = "Title,Author Line,Id,PublishDate,PageCount,Genres"
 	print(header)
 
 	-- Keep track of the total character count
@@ -25,7 +25,7 @@ local function generateCSV(data, maxChars)
 		local authorLine = entry.AuthorLine
 		local id = entry.Id
 		local publishDate = entry.PublishDate
-		local authorIds = entry.AuthorIds
+		--local authorIds = entry.AuthorIds
 		local pageCount = entry.PageCount
 		local genres = entry.Genres or {}
 		local title = ""
@@ -35,20 +35,20 @@ local function generateCSV(data, maxChars)
 		if string.find(publishDate,",") then publishDate = "\""..publishDate.."\"" end
 		
 		-- Prepare authorIds string
-		local authorIdsString = ""
-		if authorIds[1] ~= false then
-			authorIds1 = {}
-			for i,v in pairs(authorIds) do
-				if type(v) == "string" then table.insert(authorIds1,v) end
-			end
-			authorIdsString = table.concat(authorIds1, ", ")
-		end
+		--local authorIdsString = ""
+		--if authorIds[1] ~= false then
+		--	authorIds1 = {}
+		--	for i,v in pairs(authorIds) do
+		--		if type(v) == "string" then table.insert(authorIds1,v) end
+		--	end
+		--	authorIdsString = table.concat(authorIds1, ", ")
+		--end
 		
 		-- Concatenate genres
 		local genresString = #genres > 0 and '"' .. table.concat(genres, ", ") .. '"' or ''
 
 		-- Generate the CSV line
-		local csvLine = string.format('%q,%q,%d,%s,%s,%d,%s', title, authorLine, id, publishDate, authorIdsString, pageCount, genresString)
+		local csvLine = string.format('%q,%q,%d,%s,%d,%s', title, authorLine, id, publishDate, pageCount, genresString)
 
 		-- Check character count before printing
 		local lineCharCount = #csvLine + 1 -- Adding 1 for the newline character
