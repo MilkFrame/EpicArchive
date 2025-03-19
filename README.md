@@ -2,11 +2,11 @@
   <p align="center">
     <img src="docs/assets/Logo.png" width="320" title="Epic Archive" alt="Epic Archive">
   </p>
-  <h3>Archive dedicated to Epic Minigames on Roblox</h3>
+  <!-- <h3>Archive dedicated to Epic Minigames on Roblox</h3> -->
 </div>
 <h2></h2>
 
-This repository is an archive of player-related data for various Roblox games. The primary archive here is about Epic&nbsp;Minigames (a Roblox game released in 2015), hence this repository's name. Intended for historical preservation and educational purposes.
+<b>This repository is an archive of player-related data for various Roblox games.</b> The primary archive here is about _Epic&nbsp;Minigames_ (a Roblox game released in 2015), hence this repository's name. Intended for historical preservation and educational purposes.
 
 All data in this repository is dynamic, as in it is constantly subject to change over time, particularly because it is focused on player data. For more intrinsic data such as game data and global leaderboards, check out my main repository 'MilkBox'.
 
@@ -18,7 +18,6 @@ Below is a list of quick links to all archives in this project. There's also som
 | **[[Epic&nbsp;Minigames] Player&nbsp;Survey](https://github.com/MilkFrame/EpicArchive/tree/main/Archive/Epic%20Minigames/PlayerSurvey)** | <a href="https://www.roblox.com/games/277751860" target="_blank"><img src="docs/assets/icon-epic-minigames.png" width="32" title="Epic Minigames" alt="Epic Minigames"> | `csv` | Archive of player stats such as levels, wins, and equipped items. |
 | **[[Epic&nbsp;Minigames] Countries&nbsp;LB](https://github.com/MilkFrame/EpicArchive/tree/main/Archive/Epic%20Minigames/CountryLeaderboards)** | <a href="https://www.roblox.com/games/277751860" target="_blank"><img src="docs/assets/icon-epic-minigames.png" width="32" title="Epic Minigames" alt="Epic Minigames"> | `xlsx` `json` | Archive of player level rankings in the country leaderboards. |
 | **[[Epic&nbsp;Minigames] Global&nbsp;LB](https://github.com/MilkFrame/MilkBox/blob/main/Leaderboards/Epic%20Minigames%20%5B277751860%5D.lua)** | <a href="https://www.roblox.com/games/277751860" target="_blank"><img src="docs/assets/icon-epic-minigames.png" width="32" title="Epic Minigames" alt="Epic Minigames"> | `lua` | [_in MilkBox project_] Player level rankings in the global leaderboard. |
-| **[[Epic&nbsp;Minigames] Game&nbsp;Data](https://github.com/MilkFrame/MilkBox/tree/main/GameData/Epic%20Minigames%20%5B277751860%5D)** | <a href="https://www.roblox.com/games/277751860" target="_blank"><img src="docs/assets/icon-epic-minigames.png" width="32" title="Epic Minigames" alt="Epic Minigames"> | `lua` | [_in MilkBox project_] Information about minigames and items. |
 
 | Archive | Game | Format | Description |
 | --- | :---: | :---: | --- |
